@@ -1,0 +1,195 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\NoteManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\NoteManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Note.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Note.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\NoteManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\NoteManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Note.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Note.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\SFMLTemplate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\SFMLTemplate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2D0F6B1-6564-41CB-B99F-268721A12BA4}|SFMLTemplate\\SFMLTemplate.vcxproj|solutionrelative:SFMLTemplate\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Game.cpp",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Game.cpp",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Game.cpp",
+              "RelativeToolTip": "SFMLTemplate\\Game.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T12:01:12.949Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Menu.h",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Menu.h",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Menu.h",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Menu.h",
+              "RelativeToolTip": "SFMLTemplate\\Menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T13:42:44.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Menu.cpp",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Menu.cpp",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Menu.cpp",
+              "RelativeToolTip": "SFMLTemplate\\Menu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T13:41:50.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NoteManager.cpp",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\NoteManager.cpp",
+              "RelativeDocumentMoniker": "SFMLTemplate\\NoteManager.cpp",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\NoteManager.cpp",
+              "RelativeToolTip": "SFMLTemplate\\NoteManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T13:25:50.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NoteManager.h",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\NoteManager.h",
+              "RelativeDocumentMoniker": "SFMLTemplate\\NoteManager.h",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\NoteManager.h",
+              "RelativeToolTip": "SFMLTemplate\\NoteManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T13:23:58.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Note.cpp",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Note.cpp",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Note.cpp",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Note.cpp",
+              "RelativeToolTip": "SFMLTemplate\\Note.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T13:14:30.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Note.h",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Note.h",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Note.h",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Note.h",
+              "RelativeToolTip": "SFMLTemplate\\Note.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T13:10:48.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SFMLTemplate.cpp",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\SFMLTemplate.cpp",
+              "RelativeDocumentMoniker": "SFMLTemplate\\SFMLTemplate.cpp",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\SFMLTemplate.cpp",
+              "RelativeToolTip": "SFMLTemplate\\SFMLTemplate.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T11:51:33.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Player.h",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Player.h",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Player.h",
+              "RelativeToolTip": "SFMLTemplate\\Player.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T11:38:41.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Game.h",
+              "RelativeDocumentMoniker": "SFMLTemplate\\Game.h",
+              "ToolTip": "C:\\Users\\Wlasciciel\\Desktop\\projekty\\beatup\\SFMLTemplate\\Game.h",
+              "RelativeToolTip": "SFMLTemplate\\Game.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T11:37:22.888Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
