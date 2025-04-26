@@ -6,6 +6,11 @@ Game::Game():window(sf::VideoMode(800,600), "Beat Catcher"){
 		exit(1);
 	}
 	menu = new Menu(font, window);
+
+	if (!music.openFromFile("your_song.ogg")) {
+		std::cout << "Nie uda³o siê za³adowaæ muzyki" << std::endl;
+		exit(1);
+	}
 }
 
 void Game::run() {
@@ -28,26 +33,28 @@ void Game::processEvents() {
 			int choice = menu->getClickedIndex(mousePos);
 			if (choice == 0) {
 				state = GameState::Playing;
+				music.play();
 			}
 			else if (choice == 1) {
 				window.close();
 			}
 		}
 	}
-	
 }
 void Game::update(sf::Time) {
 	if (state == GameState::Playing) {
-		if (clock.getElapsedTime().asSeconds() > 1.f) {
+		noteManager.update(music.getPlayingOffset());
+		/*if (clock.getElapsedTime().asSeconds() > 1.f) {
 			noteManager.createNote();
 			clock.restart();
-		}
+		}*/
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 			auto mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 			noteManager.checkForClicks(mousePos);
 		}
 	}
 }
+
 void Game::render() {
 	window.clear();
 
