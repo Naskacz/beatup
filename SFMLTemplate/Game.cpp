@@ -28,7 +28,7 @@ void Game::processEvents() {
 			int choice = menu->getClickedIndex(mousePos);
 			if (choice == 0) {
 				state = GameState::Playing;
-				noteManager.loadBeatmap(beatmapName + "txt");
+				noteManager.loadBeatmap(beatmapName + ".txt");
 				songName = noteManager.getBeatmap().getSongName();
 				if (!music.openFromFile(songName)) {
 					std::cout << "Nie udalo siê zaladowac muzyki" << std::endl;
@@ -85,7 +85,7 @@ void Game::processEvents() {
 				std::cout << "Zapisz mape jako: ";
 				std::cin >> beatmapName;
 				std::cout << std::endl;
-				noteManager.saveBeatmap(beatmapName + "txt", songName);
+				noteManager.saveBeatmap(beatmapName + ".txt", songName);
 				state = GameState::Menu;
 			}
 		}
