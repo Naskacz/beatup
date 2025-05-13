@@ -6,16 +6,25 @@
 class Note
 {
 	sf::CircleShape circle;
+	sf::CircleShape ring;
 	sf::Clock lifetimeClock;
 	sf::Clock countdownClock;
 	float Lifetime = 3.0f;
 	int countdown = Lifetime;
+	float targetTime;
+	float appearTime;
+	float ringRadius;
+	float ringThickness;
 public:
-	Note(float X, float Y);
-	void render(sf::RenderWindow& window);
+	Note(float X, float Y, float targetTime);
+	void render(sf::RenderWindow& window, float currentTime);
 	bool isClicked(sf::Vector2f mousePos);
 	bool isExpired() const;
 	bool isReadyToClick() const;
-	void update();
+	void update(float currentTime);
+	float getX() const { return circle.getPosition().x; }
+	float getY() const { return circle.getPosition().y; }
+	float getTime() const { return targetTime; }
+
 };
 

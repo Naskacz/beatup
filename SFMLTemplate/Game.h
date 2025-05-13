@@ -6,6 +6,7 @@
 enum class GameState {
 	Menu,
 	Playing,
+	MapCreator,
 	Exit
 };
 
@@ -19,6 +20,8 @@ class Game
 	const sf::Time timePerFrame = sf::seconds(1.f / 60.f);
 	NoteManager noteManager;
 	sf::Music music;
+	std::string songName;
+	std::string beatmapName = "beatmap";
 
 	void processEvents();
 	void update(sf::Time delta);

@@ -4,7 +4,7 @@ class Menu
 {
 	sf::RenderWindow& window;
 	sf::Text* title;
-	sf::Text options[2];
+	sf::Text options[4];
 public:
 	Menu(sf::Font& font, sf::RenderWindow& window);
 	void drawMenu();

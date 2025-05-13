@@ -8,12 +8,17 @@ class NoteManager
 	std::vector<Note> notes;
 	Beatmap beatmap;
 	int currentNoteIndex = 0;
+	sf::Text* wynikText;
+	int wynik = 0;
 
 public:
-	void render(sf::RenderWindow& window);
+	NoteManager();
+	void render(sf::RenderWindow& window, float currentTime);
 	void loadBeatmap(const std::string& filename);
-	void createNote();
 	void checkForClicks(sf::Vector2f mousePos);
 	void update(sf::Time songTime);
+	void addNote(sf::Vector2f position, float time);
+	void saveBeatmap(const std::string& filename, const std::string& songName);
+	Beatmap& getBeatmap();
 };
 

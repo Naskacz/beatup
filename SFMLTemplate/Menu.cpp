@@ -7,8 +7,8 @@ Menu::Menu(sf::Font& font, sf::RenderWindow& win) :window(win) {
 	title->setPosition(200, 100);
 	title->setFillColor(sf::Color::White);
 
-	std::string texts[] = { "Start", "Exit"};
-	for (int i = 0; i < 2; i++) {
+	std::string texts[] = { "Start", "Choose map", "Map creator", "Exit" };
+	for (int i = 0; i < 4; i++) {
 		options[i].setFont(font);
 		options[i].setString(texts[i]);
 		options[i].setCharacterSize(30);
@@ -23,7 +23,7 @@ void Menu::drawMenu() {
 }
 
 int Menu::getClickedIndex(sf::Vector2f mousePos) {
-	for (int i = 0; i < 2;i++) {
+	for (int i = 0; i < 4;i++) {
 		if (options[i].getGlobalBounds().contains(mousePos))
 			return i;
 	}
