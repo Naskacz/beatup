@@ -9,13 +9,14 @@ class Note
 	sf::CircleShape ring;
 	sf::Clock lifetimeClock;
 	sf::Clock countdownClock;
-	float Lifetime = 3.0f;
+	float Lifetime = 2.0f;
 	int countdown = Lifetime;
 	float targetTime;
 	float appearTime;
 	float ringRadius;
 	float ringThickness;
 public:
+	static int counter;
 	Note(float X, float Y, float targetTime);
 	void render(sf::RenderWindow& window, float currentTime);
 	bool isClicked(sf::Vector2f mousePos);
@@ -25,6 +26,6 @@ public:
 	float getX() const { return circle.getPosition().x; }
 	float getY() const { return circle.getPosition().y; }
 	float getTime() const { return targetTime; }
-
+	static int getCounter() { return counter; }
 };
 

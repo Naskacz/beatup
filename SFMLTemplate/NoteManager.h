@@ -2,13 +2,14 @@
 #include "Note.h"
 #include <vector>
 #include "Beatmap.h"
-
+#include <SFML/Graphics/Font.hpp>
 class NoteManager
 {
 	std::vector<Note> notes;
 	Beatmap beatmap;
 	int currentNoteIndex = 0;
-	sf::Text* wynikText;
+	sf::Font font;
+	sf::Text wynikText;
 	int wynik = 0;
 
 public:

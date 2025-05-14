@@ -18,9 +18,3 @@ bool Beatmap::loadFromFile(const std::string& filename) {
 
 	return true;
 }
-const std::vector<NoteInfo>& Beatmap::getNotes() const {
-	return notes;
-}
-const std::string& Beatmap::getSongName() const {
-	return songName;
-}

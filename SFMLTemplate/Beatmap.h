@@ -15,7 +15,7 @@ class Beatmap
 public:
 	Beatmap();
 	bool loadFromFile(const std::string& filename);
-	const std::vector<NoteInfo>& getNotes() const;
-	const std::string& getSongName() const;
+	const std::vector<NoteInfo>& getNotes() const {return notes;}
+	const std::string& getSongName() const {return songName;}
 };
 

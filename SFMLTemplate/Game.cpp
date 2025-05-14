@@ -1,5 +1,7 @@
 #include "Game.h"
 #include <iostream>
+int Note::counter = 0;
+
 Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
 	if (!font.loadFromFile("arial.ttf")) {
 		std::cout << "Nie udalo sie zaladowac czcionki" << std::endl;
@@ -28,10 +30,12 @@ void Game::processEvents() {
 			int choice = menu->getClickedIndex(mousePos);
 			if (choice == 0) {
 				state = GameState::Playing;
+				Note::counter = 0;
 				noteManager.loadBeatmap(beatmapName + ".txt");
 				songName = noteManager.getBeatmap().getSongName();
 				if (!music.openFromFile(songName)) {
 					std::cout << "Nie udalo siê zaladowac muzyki" << std::endl;
+					state = GameState::Menu;
 				}
 				music.play();
 				return;
@@ -44,12 +48,13 @@ void Game::processEvents() {
 			}
 			else if (choice == 2) {
 				state = GameState::MapCreator;
+				Note::counter = 0;
 				std::cout << "Wybierz plik z muzyka: ";
 				std::cin >> songName;
 				std::cout << std::endl;
 				if (!music.openFromFile(songName)) {
 					std::cout << "Nie udalo sie zaladowac muzyki" << std::endl;
-					exit(1);
+					state = GameState::Menu;
 				}
 				music.play();
 				return;
@@ -109,7 +114,13 @@ void Game::render() {
 	window.clear();
 
 	if (state == GameState::Menu) menu->drawMenu();
-	else if (state == GameState::Playing) noteManager.render(window, music.getPlayingOffset().asSeconds());
-	else if (state == GameState::MapCreator) noteManager.render(window, music.getPlayingOffset().asSeconds());
+	else if (state == GameState::Playing) {
+		window.clear(sf::Color::Yellow);
+		noteManager.render(window, music.getPlayingOffset().asSeconds());
+	}
+	else if (state == GameState::MapCreator) {
+		noteManager.render(window, music.getPlayingOffset().asSeconds());
+
+	}
 	window.display();
 }

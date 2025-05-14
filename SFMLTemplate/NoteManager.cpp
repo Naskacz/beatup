@@ -4,17 +4,19 @@
 #include <string>
 
 NoteManager::NoteManager(){
-	sf::Font font;
-	font.loadFromFile("arial.ttf");
-	wynikText = new sf::Text();
-	wynikText->setFont(font);
-	wynikText->setString(std::to_string(wynik));
-	wynikText->setCharacterSize(50);
-	wynikText->setPosition(200, 100);
-	wynikText->setFillColor(sf::Color::White);
+	if (!font.loadFromFile("arial.ttf")) {
+		std::cout << "Nie udalo sie zaladowac czcionki" << std::endl;
+		exit(1);
+	}
+	wynikText.setFont(font);
+	wynikText.setString(std::to_string(wynik));
+	wynikText.setCharacterSize(50);
+	wynikText.setPosition(0, 0);
+	wynikText.setFillColor(sf::Color::Black);
 }
 
 void NoteManager::render(sf::RenderWindow& window, float currentTime) {
+	window.draw(wynikText);
 	for (auto& note:notes) {
 		note.render(window, currentTime);
 	}
@@ -24,6 +26,8 @@ void NoteManager::checkForClicks(sf::Vector2f mousePos) {
 		if (it->isClicked(mousePos) && it == notes.begin()) {
 			notes.erase(it);
 			std::cout << "Klik!" << std::endl;
+			wynik += 100;
+			wynikText.setString(std::to_string(wynik));
 			break;
 		}
 		++it;

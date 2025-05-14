@@ -1,9 +1,13 @@
 #include "Note.h"
+
 Note::Note(float X, float Y, float targetTime) : targetTime(targetTime), appearTime(targetTime - 1.0f), ringRadius(80.f), ringThickness(4.f) {
 	circle.setRadius(30.f);
 	circle.setOrigin(circle.getRadius(), circle.getRadius());
 	circle.setFillColor(sf::Color::Red);
 	circle.setPosition(X, Y);
+	circle.setOutlineThickness(2.f);
+	circle.setOutlineColor(sf::Color::White);
+	counter++;
 }
 
 void Note::render(sf::RenderWindow& window, float currentTime) {
@@ -17,7 +21,6 @@ void Note::render(sf::RenderWindow& window, float currentTime) {
 		ring.setFillColor(sf::Color::Transparent);
 		window.draw(ring);
 	}
-
 }
 
 bool Note::isClicked(sf::Vector2f mousePos) {
@@ -44,5 +47,5 @@ void Note::update(float currentTime) {
 
 bool Note::isReadyToClick() const {
 	float elapsed = lifetimeClock.getElapsedTime().asSeconds();
-	return elapsed >= (appearTime - targetTime);
+	return elapsed >= (targetTime - appearTime-0.5f);
 }
