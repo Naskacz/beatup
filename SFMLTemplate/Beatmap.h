@@ -11,11 +11,11 @@ struct NoteInfo {
 class Beatmap
 {
 	std::vector<NoteInfo> notes;
-	std::string songName;
+	std::string songFile;
 public:
 	Beatmap();
 	bool loadFromFile(const std::string& filename);
 	const std::vector<NoteInfo>& getNotes() const {return notes;}
-	const std::string& getSongName() const {return songName;}
+	const std::string& getSongFile() const {return songFile;}
 };
 

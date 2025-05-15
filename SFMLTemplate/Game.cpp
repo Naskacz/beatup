@@ -1,5 +1,8 @@
 #include "Game.h"
+#include "tinyfiledialogs.h"
 #include <iostream>
+#include <filesystem>
+#include <vector>
 int Note::counter = 0;
 
 Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
@@ -9,7 +12,50 @@ Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
 	}
 	menu = new Menu(font, window);
 }
-
+void Game::beatmapFileChoice() {
+	std::filesystem::path folder = std::filesystem::current_path();
+	if (!std::filesystem::exists(folder)) {
+		std::cerr << "Folder nie istnieje: " << folder << "\n";
+		return;
+	}
+	std::string fullPath = folder.string() + "\\beatmaps\\";
+	beatmapFile = tinyfd_openFileDialog(
+		"Wybierz plik z beatmap¹",
+		fullPath.c_str(),
+		0, nullptr, nullptr, 0);
+	if (!beatmapFile.empty()) {
+		std::filesystem::path path(beatmapFile);
+		std::vector<std::string> parts;
+		for (const auto& part : path)parts.push_back(part.string());
+		std::string lastTwo = parts[parts.size() - 2] + "/" + parts[parts.size() - 1];
+		beatmapFile = lastTwo;
+	}
+	else {
+		std::cout << "cos poszlo nie tak"<<std::endl;
+	}
+}
+void Game::songFileChoice() {
+	std::filesystem::path folder = std::filesystem::current_path();
+	if (!std::filesystem::exists(folder)) {
+		std::cerr << "Folder nie istnieje: " << folder << "\n";
+		return;
+	}
+	std::string fullPath = folder.string() + "\\songs\\";
+	songFile = tinyfd_openFileDialog(
+		"Wybierz plik z muzyk¹",
+		fullPath.c_str(),
+		0, nullptr, nullptr, 0);
+	if (!songFile.empty()) {
+		std::filesystem::path path(songFile);
+		std::vector<std::string> parts;
+		for (const auto& part : path)parts.push_back(part.string());
+		std::string lastTwo = parts[parts.size() - 2] + "/" + parts[parts.size() - 1];
+		songFile = lastTwo;
+	}
+	else {
+		std::cout << "cos poszlo nie tak" << std::endl;
+	}
+}
 void Game::run() {
 	while (window.isOpen()) {
 		processEvents();
@@ -31,31 +77,32 @@ void Game::processEvents() {
 			if (choice == 0) {
 				state = GameState::Playing;
 				Note::counter = 0;
-				noteManager.loadBeatmap(beatmapName + ".txt");
-				songName = noteManager.getBeatmap().getSongName();
-				if (!music.openFromFile(songName)) {
+				if (beatmapFile.empty())beatmapFileChoice();
+				noteManager.loadBeatmap(beatmapFile);
+				songFile = noteManager.getBeatmap().getSongFile();
+				if (!music.openFromFile(songFile)) {
 					std::cout << "Nie udalo siê zaladowac muzyki" << std::endl;
 					state = GameState::Menu;
 				}
+				sf::sleep(sf::seconds(1));
 				music.play();
 				return;
 			}
 			else if (choice == 1) {
-				std::cout << "Wybierz mape: ";
-				std::cin >> beatmapName;
-				std::cout << std::endl;
+				beatmapFileChoice();
+				std::cout << beatmapFile << std::endl;
 				state = GameState::Menu;
 			}
 			else if (choice == 2) {
 				state = GameState::MapCreator;
 				Note::counter = 0;
-				std::cout << "Wybierz plik z muzyka: ";
-				std::cin >> songName;
+				songFileChoice();
 				std::cout << std::endl;
-				if (!music.openFromFile(songName)) {
+				if (!music.openFromFile(songFile)) {
 					std::cout << "Nie udalo sie zaladowac muzyki" << std::endl;
 					state = GameState::Menu;
 				}
+				sf::sleep(sf::seconds(0.1f));
 				music.play();
 				return;
 			}
@@ -88,9 +135,9 @@ void Game::processEvents() {
 			if (event.key.code == sf::Keyboard::Enter) {
 				music.stop();
 				std::cout << "Zapisz mape jako: ";
-				std::cin >> beatmapName;
+				std::cin >> beatmapFile;
 				std::cout << std::endl;
-				noteManager.saveBeatmap(beatmapName + ".txt", songName);
+				noteManager.saveBeatmap("beatmaps\\"+beatmapFile+".txt", songFile);
 				state = GameState::Menu;
 			}
 		}
