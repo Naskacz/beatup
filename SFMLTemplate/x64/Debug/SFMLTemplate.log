@@ -1,2 +1,3 @@
-﻿  NicknameInput.cpp
-  SFMLTemplate.vcxproj -> C:\Users\Wlasciciel\Desktop\projekty\beatup\x64\Debug\SFMLTemplate.exe
+﻿  Game.cpp
+C:\Users\pc\Desktop\beatup\SFMLTemplate\Note.h(13,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  SFMLTemplate.vcxproj -> C:\Users\pc\Desktop\beatup\x64\Debug\SFMLTemplate.exe

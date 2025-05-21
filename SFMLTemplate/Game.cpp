@@ -10,8 +10,12 @@ Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
 		std::cout << "Nie udalo sie zaladowac czcionki" << std::endl;
 		exit(1);
 	}
-	player = std::make_unique<Player>("Guest");
 	menu = new Menu(font, window);
+	settings = new Settings(window, font);
+	nicknameText.setFont(font);
+	nicknameText.setString(settings->getNickname());
+	nicknameText.setFillColor(sf::Color::White);
+	nicknameText.setPosition(0, 0);
 }
 void Game::beatmapFileChoice() {
 	std::filesystem::path folder = std::filesystem::current_path();
@@ -109,11 +113,25 @@ void Game::processEvents() {
 				return;
 			}
 			else if (choice == 3) {
-				state == GameState::Settings;
+				state = GameState::Settings;
 				return;
 			}
 			else if (choice == 4) {
 				window.close();
+			}
+		}
+		// ======================= GAME STATE SETTINGS ========================
+		if (state == GameState::Settings && event.type == sf::Event::MouseButtonPressed)
+		{
+			int choice = settings->getClickedIndex(mousePos);
+			if (choice == 0) {
+				std::string str;
+				std::cin >> str;
+				settings->setNickname(str);
+				nicknameText.setString(settings->getNickname());
+			}
+			else if (choice == 2) {
+				state = GameState::Menu;
 			}
 		}
 		// ======================= GAME STATE PLAYING =========================
@@ -154,12 +172,10 @@ void Game::update(sf::Time) {
 		noteManager.update(music.getPlayingOffset());
 	}
 	if (state == GameState::MapCreator) {
-		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-			state = GameState::Menu;
-		}*/
+
 	}
 	if (state == GameState::Menu) {
-		menu->drawMenu();
+	
 	}
 	if (state == GameState::Settings) {
 
@@ -178,5 +194,9 @@ void Game::render() {
 		noteManager.render(window, music.getPlayingOffset().asSeconds());
 
 	}
+	else if (state == GameState::Settings) {
+		settings->drawSettings();
+	}
+	window.draw(nicknameText);
 	window.display();
 }

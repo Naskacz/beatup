@@ -4,6 +4,7 @@
 #include "NoteManager.h"
 #include "Player.h"
 #include <SFML/Audio.hpp>
+#include "Settings.h"
 enum class GameState {
 	Menu,
 	Playing,
@@ -24,7 +25,8 @@ class Game
 	sf::Music music;
 	std::string songFile;
 	std::string beatmapFile;
-	std::unique_ptr<Player> player;
+	Settings* settings;
+	sf::Text nicknameText;
 
 	void processEvents();
 	void update(sf::Time delta);
