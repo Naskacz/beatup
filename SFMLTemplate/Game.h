@@ -2,11 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
 #include "NoteManager.h"
+#include "Player.h"
 #include <SFML/Audio.hpp>
 enum class GameState {
 	Menu,
 	Playing,
 	MapCreator,
+	Settings,
 	Exit
 };
 
@@ -22,6 +24,7 @@ class Game
 	sf::Music music;
 	std::string songFile;
 	std::string beatmapFile;
+	std::unique_ptr<Player> player;
 
 	void processEvents();
 	void update(sf::Time delta);

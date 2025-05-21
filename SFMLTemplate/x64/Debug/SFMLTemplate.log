@@ -1,10 +1,2 @@
-﻿  Game.cpp
-C:\Users\Wlasciciel\Desktop\projekty\beatup\SFMLTemplate\Note.h(13,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Game.cpp')
-  
-  SFMLTemplate.cpp
-C:\Users\Wlasciciel\Desktop\projekty\beatup\SFMLTemplate\Note.h(13,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'SFMLTemplate.cpp')
-  
-  Generating Code...
+﻿  NicknameInput.cpp
   SFMLTemplate.vcxproj -> C:\Users\Wlasciciel\Desktop\projekty\beatup\x64\Debug\SFMLTemplate.exe

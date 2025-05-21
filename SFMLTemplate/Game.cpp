@@ -10,6 +10,7 @@ Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
 		std::cout << "Nie udalo sie zaladowac czcionki" << std::endl;
 		exit(1);
 	}
+	player = std::make_unique<Player>("Guest");
 	menu = new Menu(font, window);
 }
 void Game::beatmapFileChoice() {
@@ -92,6 +93,7 @@ void Game::processEvents() {
 				beatmapFileChoice();
 				std::cout << beatmapFile << std::endl;
 				state = GameState::Menu;
+				return;
 			}
 			else if (choice == 2) {
 				state = GameState::MapCreator;
@@ -107,6 +109,10 @@ void Game::processEvents() {
 				return;
 			}
 			else if (choice == 3) {
+				state == GameState::Settings;
+				return;
+			}
+			else if (choice == 4) {
 				window.close();
 			}
 		}
@@ -154,6 +160,9 @@ void Game::update(sf::Time) {
 	}
 	if (state == GameState::Menu) {
 		menu->drawMenu();
+	}
+	if (state == GameState::Settings) {
+
 	}
 }
 
