@@ -6,7 +6,8 @@ class Settings
 	sf::Text* title;
 	sf::Text options[3];
 	std::string nicknameInput = "Guest";
-	// sf::Text nicknameText;
+	sf::Texture backgroundTexture;
+	sf::Sprite backgroundSprite;
 public:
 	Settings(sf::RenderWindow& window, sf::Font& font);
 	void setNickname(const std::string str);

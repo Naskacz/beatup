@@ -1,11 +1,12 @@
 #include "Menu.h"
+#include "iostream"
 Menu::Menu(sf::Font& font, sf::RenderWindow& win) :window(win) {
 	title = new sf::Text();
 	title->setFont(font);
 	title->setString("BeatUp");
 	title->setCharacterSize(60);
 	title->setPosition(300, 100);
-	title->setFillColor(sf::Color::Yellow);
+	title->setFillColor(sf::Color::White);
 	title->setOutlineThickness(5);
 	title->setOutlineColor(sf::Color::Black);
 	title->setLetterSpacing(1.5f);
@@ -20,10 +21,16 @@ Menu::Menu(sf::Font& font, sf::RenderWindow& win) :window(win) {
 		options[i].setOutlineColor(sf::Color::Black);
 		options[i].setOutlineThickness(3);
 	}
+	if (!backgroundTexture.loadFromFile("backgroundMenu.png")) {
+		std::cerr << "Can't load background texture" << std::endl;
+	}
+	backgroundSprite.setScale((float)window.getSize().x/backgroundTexture.getSize().x, (float)window.getSize().y/backgroundTexture.getSize().y);
+	backgroundSprite.setTexture(backgroundTexture);
 }
 
 void Menu::drawMenu() {
-	window.clear(sf::Color::Blue);
+	window.clear();
+	window.draw(backgroundSprite);
 	window.draw(*title);
 	for (const auto& option : options) window.draw(option);
 }

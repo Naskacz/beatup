@@ -1,12 +1,16 @@
 #include "Settings.h"
-
+#include "iostream"
 Settings::Settings(sf::RenderWindow& window, sf::Font& font):window(window) {
 	title = new sf::Text();
 	title->setFont(font);
 	title->setString("Settings");
-	title->setCharacterSize(30);
+	title->setCharacterSize(60);
 	title->setFillColor(sf::Color::White);
-	title->setPosition(100, 100);
+	title->setOutlineThickness(5);
+	title->setOutlineColor(sf::Color::Black);
+	title->setPosition(300, 100);
+	title->setLetterSpacing(1.5f);
+
 	std::string texts[] = { "Nickname", "Audio", "Exit"};
 	for (int i = 0; i < 3; i++) {
 		options[i].setFont(font);
@@ -17,6 +21,11 @@ Settings::Settings(sf::RenderWindow& window, sf::Font& font):window(window) {
 		options[i].setOutlineColor(sf::Color::Black);
 		options[i].setOutlineThickness(3);
 	}
+	if (!backgroundTexture.loadFromFile("backgroundMenu.png")) {
+		std::cerr << "Can't load background texture" << std::endl;
+	}
+	backgroundSprite.setScale((float)window.getSize().x / backgroundTexture.getSize().x, (float)window.getSize().y / backgroundTexture.getSize().y);
+	backgroundSprite.setTexture(backgroundTexture);
 }
 
 void Settings::setNickname(const std::string str) {
@@ -27,7 +36,7 @@ std::string& Settings::getNickname() {
 }
 
 void Settings::drawSettings() {
-	window.clear(sf::Color::Blue);
+	window.draw(backgroundSprite);
 	window.draw(*title);
 	for (const auto& option : options) window.draw(option);
 }

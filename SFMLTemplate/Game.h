@@ -27,6 +27,8 @@ class Game
 	std::string beatmapFile;
 	Settings* settings;
 	sf::Text nicknameText;
+	sf::Texture backgroundTexture;
+	sf::Sprite backgroundSprite;
 
 	void processEvents();
 	void update(sf::Time delta);

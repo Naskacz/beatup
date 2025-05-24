@@ -5,7 +5,7 @@
 #include <vector>
 int Note::counter = 0;
 
-Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
+Game::Game() :window(sf::VideoMode(800, 600), "BeatUp") {
 	if (!font.loadFromFile("arial.ttf")) {
 		std::cout << "Nie udalo sie zaladowac czcionki" << std::endl;
 		exit(1);
@@ -18,6 +18,11 @@ Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
 	nicknameText.setOutlineColor(sf::Color::Black);
 	nicknameText.setOutlineThickness(2);
 	nicknameText.setPosition(700, 0);
+	if (!backgroundTexture.loadFromFile("backgroundGame.png")) {
+		std::cerr << "Nie mozna zaladowac tekstury tla" << std::endl;
+	}
+	backgroundSprite.setScale((float)window.getSize().x / backgroundTexture.getSize().x, (float)window.getSize().y / backgroundTexture.getSize().y);
+	backgroundSprite.setTexture(backgroundTexture);
 }
 void Game::beatmapFileChoice() {
 	std::filesystem::path folder = std::filesystem::current_path();
@@ -189,7 +194,8 @@ void Game::render() {
 
 	if (state == GameState::Menu) menu->drawMenu();
 	else if (state == GameState::Playing) {
-		window.clear(sf::Color::Yellow);
+		window.clear();
+		window.draw(backgroundSprite);
 		noteManager.render(window, music.getPlayingOffset().asSeconds());
 	}
 	else if (state == GameState::MapCreator) {

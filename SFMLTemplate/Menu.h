@@ -5,6 +5,8 @@ class Menu
 	sf::RenderWindow& window;
 	sf::Text* title;
 	sf::Text options[5];
+	sf::Sprite backgroundSprite;
+	sf::Texture backgroundTexture;
 public:
 	Menu(sf::Font& font, sf::RenderWindow& window);
 	void drawMenu();
