@@ -15,7 +15,9 @@ Game::Game() :window(sf::VideoMode(800, 600), "Beat Catcher") {
 	nicknameText.setFont(font);
 	nicknameText.setString(settings->getNickname());
 	nicknameText.setFillColor(sf::Color::White);
-	nicknameText.setPosition(0, 0);
+	nicknameText.setOutlineColor(sf::Color::Black);
+	nicknameText.setOutlineThickness(2);
+	nicknameText.setPosition(700, 0);
 }
 void Game::beatmapFileChoice() {
 	std::filesystem::path folder = std::filesystem::current_path();
@@ -137,7 +139,7 @@ void Game::processEvents() {
 		// ======================= GAME STATE PLAYING =========================
 		if (state == GameState::Playing && event.type == sf::Event::MouseButtonPressed) {
 			if (event.mouseButton.button == sf::Mouse::Left) {
-				noteManager.checkForClicks(mousePos);
+				noteManager.checkForClicks(mousePos, music.getPlayingOffset());
 			}
 		}
 		// PLAYING/MAPCREATOR TO MENU

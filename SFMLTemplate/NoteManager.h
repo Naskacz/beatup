@@ -16,7 +16,7 @@ public:
 	NoteManager();
 	void render(sf::RenderWindow& window, float currentTime);
 	void loadBeatmap(const std::string& filename);
-	void checkForClicks(sf::Vector2f mousePos);
+	void checkForClicks(sf::Vector2f mousePos, sf::Time songTime);
 	void update(sf::Time songTime);
 	void addNote(sf::Vector2f position, float time);
 	void saveBeatmap(const std::string& filename, const std::string& songName);

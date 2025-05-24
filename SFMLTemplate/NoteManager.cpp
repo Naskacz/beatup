@@ -10,9 +10,11 @@ NoteManager::NoteManager(){
 	}
 	wynikText.setFont(font);
 	wynikText.setString(std::to_string(wynik));
-	wynikText.setCharacterSize(50);
-	wynikText.setPosition(0, 0);
-	wynikText.setFillColor(sf::Color::Black);
+	wynikText.setCharacterSize(40);
+	wynikText.setPosition(20, 10);
+	wynikText.setFillColor(sf::Color::White);
+	wynikText.setOutlineColor(sf::Color::Black);
+	wynikText.setOutlineThickness(2);
 }
 
 void NoteManager::render(sf::RenderWindow& window, float currentTime) {
@@ -21,19 +23,27 @@ void NoteManager::render(sf::RenderWindow& window, float currentTime) {
 		note.render(window, currentTime);
 	}
 }
-void NoteManager::checkForClicks(sf::Vector2f mousePos) {
+void NoteManager::checkForClicks(sf::Vector2f mousePos, sf::Time songTime) {
 	for (auto it = notes.begin();it != notes.end();) {
 		if (it->isClicked(mousePos) && it == notes.begin()) {
+			if (abs(songTime.asSeconds() - it->getTime()) < 0.05f) {
+				std::cout << "Perfect!" << std::endl;
+				wynik += 250;
+			}
+			else if (abs(songTime.asSeconds() - it->getTime()) < 0.2f) {
+				std::cout << "Great!" << std::endl;
+				wynik += 150;
+			}
+			else {
+				std::cout << "Good!" << std::endl;
+				wynik += 100;
+			}
 			notes.erase(it);
-			std::cout << "Klik!" << std::endl;
-			wynik += 100;
-			wynikText.setString(std::to_string(wynik));
 			break;
 		}
 		++it;
 	}
 }
-
 void NoteManager::update(sf::Time songTime) {
 	const float appearLeadTime = 1.0f;
 	const auto& beatmapNotes = beatmap.getNotes();
@@ -43,7 +53,6 @@ void NoteManager::update(sf::Time songTime) {
 		notes.emplace_back(info.x, info.y, info.time);
 		currentNoteIndex++;
 	}
-
 	for (auto& note : notes) {
 		note.update(songTime.asSeconds());
 	}
@@ -52,12 +61,12 @@ void NoteManager::update(sf::Time songTime) {
 		[](const Note& note) {return note.isExpired();}),
 		notes.end()
 	);
-}
+	wynikText.setString(std::to_string(wynik));
 
+}
 void NoteManager::addNote(sf::Vector2f position, float time) {
 	notes.emplace_back(position.x, position.y, time);
 }
-
 void NoteManager::saveBeatmap(const std::string& filename, const std::string& songName) {
 	std::ofstream file(filename);
 	file << songName << "\n";
