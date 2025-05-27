@@ -130,7 +130,7 @@ C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1363,111)
 C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1508,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'BeatUpServer.cpp')
   
-C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(23,23): warning C4244: 'initializing': conversion from 'int64_t' to 'int', possible loss of data
+C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(42,23): warning C4244: 'initializing': conversion from 'int64_t' to 'int', possible loss of data
 C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_server.h(237,37): warning C4267: '=': conversion from 'size_t' to 'uint16_t', possible loss of data
   (compiling source file 'BeatUpServer.cpp')
       C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_server.h(237,37):
@@ -139,7 +139,7 @@ C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_server.h(237,3
           see reference to class template instantiation 'crow::Crow<>' being compiled
           C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\app.h(501,14):
           while compiling class template member function 'void crow::Crow<>::run(void)'
-              C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(97,39):
+              C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(90,39):
               see the first reference to 'crow::Crow<>::run' in 'main'
           C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\app.h(534,26):
           see reference to class template instantiation 'crow::Server<crow::Crow<>,crow::SocketAdaptor>' being compiled
@@ -151,7 +151,7 @@ C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_server.h(237,3
               see the first reference to 'crow::Server<crow::Crow<>,crow::SocketAdaptor>::do_accept' in 'crow::Server<crow::Crow<>,crow::SocketAdaptor>::run'
               C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\app.h(540,29):
               see the first reference to 'crow::Server<crow::Crow<>,crow::SocketAdaptor>::run' in 'crow::Crow<>::run'
-              C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(97,39):
+              C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(90,39):
               see the first reference to 'crow::Crow<>::run' in 'main'
   
 C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_connection.h(479,75): warning C4244: 'argument': conversion from 'unsigned __int64' to 'int', possible loss of data
@@ -164,7 +164,7 @@ C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_connection.h(4
               see the first reference to 'crow::Server<crow::Crow<>,crow::SocketAdaptor>::do_accept' in 'crow::Server<crow::Crow<>,crow::SocketAdaptor>::run'
               C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\app.h(540,29):
               see the first reference to 'crow::Server<crow::Crow<>,crow::SocketAdaptor>::run' in 'crow::Crow<>::run'
-              C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(97,39):
+              C:\Users\Wlasciciel\Desktop\projekty\beatup\BeatUpServer\BeatUpServer.cpp(90,39):
               see the first reference to 'crow::Crow<>::run' in 'main'
           C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_server.h(256,19):
           see reference to class template instantiation 'crow::Connection<Adaptor,Handler>' being compiled

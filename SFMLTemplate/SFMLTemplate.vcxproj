@@ -24,6 +24,7 @@
     <ProjectGuid>{a2d0f6b1-6564-41cb-b99f-268721a12ba4}</ProjectGuid>
     <RootNamespace>SFMLTemplate</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>BeatUpGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -104,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\libraries\SFML\include;$(SolutionDir)\libraries</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libraries\SFML\include;$(SolutionDir)\libraries;$(ProjectDir)include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -134,29 +135,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\libraries\tinyfiledialogs.c" />
-    <ClCompile Include="AudioManager.cpp" />
-    <ClCompile Include="Beatmap.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="HttpClient.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Note.cpp" />
-    <ClCompile Include="NoteManager.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Settings.cpp" />
-    <ClCompile Include="SFMLTemplate.cpp" />
-    <ClCompile Include="TopScorers.cpp" />
+    <ClCompile Include="src\Beatmap.cpp" />
+    <ClCompile Include="src\BeatUp.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\HttpClient.cpp" />
+    <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\Note.cpp" />
+    <ClCompile Include="src\NoteManager.cpp" />
+    <ClCompile Include="src\Settings.cpp" />
+    <ClCompile Include="src\TopScorers.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioManager.h" />
-    <ClInclude Include="Beatmap.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="HttpClient.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Note.h" />
-    <ClInclude Include="NoteManager.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Settings.h" />
-    <ClInclude Include="TopScorers.h" />
+    <ClInclude Include="include\Beatmap.h" />
+    <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\HttpClient.h" />
+    <ClInclude Include="include\Menu.h" />
+    <ClInclude Include="include\Note.h" />
+    <ClInclude Include="include\NoteManager.h" />
+    <ClInclude Include="include\Settings.h" />
+    <ClInclude Include="include\TopScorers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
