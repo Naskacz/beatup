@@ -137,22 +137,26 @@
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Beatmap.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="HttpClient.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="NoteManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SFMLTemplate.cpp" />
+    <ClCompile Include="TopScorers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Beatmap.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="HttpClient.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="NoteManager.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="TopScorers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

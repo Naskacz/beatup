@@ -1,4 +1,6 @@
-﻿#include <SFML/Graphics.hpp>
+﻿#include <crow.h>
+#include <pqxx/pqxx>
+#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Game.h"
 

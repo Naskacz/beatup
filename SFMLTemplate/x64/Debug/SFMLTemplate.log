@@ -2,30 +2,135 @@
 C:\Users\Wlasciciel\Desktop\projekty\beatup\SFMLTemplate\Note.h(13,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Game.cpp')
   
-sfml-graphics-s-d.lib(Font.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Font.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(Glsl.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Glsl.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(Image.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Image.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(ImageLoader.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(ImageLoader.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(RenderWindow.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RenderWindow.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(Shader.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Shader.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(Texture.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Texture.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(Text.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Text.obj)' or at ''; linking object as if no debug info
-sfml-graphics-s-d.lib(VertexArray.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(VertexArray.obj)' or at ''; linking object as if no debug info
-sfml-audio-s-d.lib(Music.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(Music.obj)' or at ''; linking object as if no debug info
-sfml-audio-s-d.lib(SoundFileWriterFlac.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileWriterFlac.obj)' or at ''; linking object as if no debug info
-sfml-audio-s-d.lib(SoundFileWriterOgg.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileWriterOgg.obj)' or at ''; linking object as if no debug info
-sfml-audio-s-d.lib(SoundFileWriterWav.obj) : warning LNK4099: PDB '' was not found with 'sfml-audio-s-d.lib(SoundFileWriterWav.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(GlContext.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(GlContext.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(Joystick.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Joystick.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(JoystickManager.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(JoystickManager.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(Mouse.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Mouse.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(Window.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(Window.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(WindowBase.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WindowBase.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(WindowImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WindowImpl.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(InputImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(InputImpl.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(JoystickImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(JoystickImpl.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(VulkanImplWin32.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(VulkanImplWin32.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(WindowImplWin32.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WindowImplWin32.obj)' or at ''; linking object as if no debug info
-sfml-window-s-d.lib(WglContext.obj) : warning LNK4099: PDB '' was not found with 'sfml-window-s-d.lib(WglContext.obj)' or at ''; linking object as if no debug info
-sfml-system-s-d.lib(String.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(String.obj)' or at ''; linking object as if no debug info
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ranges(11): warning STL4038: The contents of <ranges> are available only with C++20 or later.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\span(12): warning STL4038: The contents of <span> are available only with C++20 or later.
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_parser_merged.h(587,32): warning C4244: '=': conversion from '__int64' to 'unsigned long', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\http_parser_merged.h(607,32): warning C4244: '=': conversion from '__int64' to 'unsigned long', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\json.h(1267,35): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\json.h(1749,32): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(180,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(199,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(201,53): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(201,53): warning C4267:         with
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(201,53): warning C4267:         [
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(201,53): warning C4267:             _Ty=int
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(201,53): warning C4267:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(302,94): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(450,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(461,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(479,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\mustache.h(490,54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(782,74): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(782,74): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(786,74): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(786,74): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(790,74): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(790,74): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(794,74): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(794,74): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(798,74): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(798,74): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(802,74): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(802,74): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(808,66): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(808,66): warning C4566: character represented by universal-character-name '\u279D' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(819,31): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(819,31): warning C4566: character represented by universal-character-name '\u2799' cannot be represented in the current code page (1250)
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(882,70): warning C4244: 'argument': conversion from '__int64' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(903,70): warning C4244: 'argument': conversion from '__int64' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(924,70): warning C4244: 'argument': conversion from '__int64' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(946,61): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(962,61): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(977,61): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1032,53): warning C4267: '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1043,45): warning C4267: '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1296,101): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1296,87): warning C4267: 'argument': conversion from 'size_t' to 'uint16_t', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1302,118): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1363,111): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Wlasciciel\vcpkg\installed\x64-windows\include\crow\routing.h(1508,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
   SFMLTemplate.vcxproj -> C:\Users\Wlasciciel\Desktop\projekty\beatup\x64\Debug\SFMLTemplate.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

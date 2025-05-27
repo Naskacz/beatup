@@ -4,7 +4,7 @@ class Menu
 {
 	sf::RenderWindow& window;
 	sf::Text* title;
-	sf::Text options[5];
+	sf::Text options[6];
 	sf::Sprite backgroundSprite;
 	sf::Texture backgroundTexture;
 public:

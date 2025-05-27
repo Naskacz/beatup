@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFMLTemplate", "SFMLTemplate\SFMLTemplate.vcxproj", "{A2D0F6B1-6564-41CB-B99F-268721A12BA4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeatUpServer", "BeatUpServer\BeatUpServer.vcxproj", "{392FCDEB-8079-4213-AB88-D1996C713585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{A2D0F6B1-6564-41CB-B99F-268721A12BA4}.Release|x64.Build.0 = Release|x64
 		{A2D0F6B1-6564-41CB-B99F-268721A12BA4}.Release|x86.ActiveCfg = Release|Win32
 		{A2D0F6B1-6564-41CB-B99F-268721A12BA4}.Release|x86.Build.0 = Release|Win32
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Debug|x64.ActiveCfg = Debug|x64
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Debug|x64.Build.0 = Debug|x64
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Debug|x86.ActiveCfg = Debug|Win32
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Debug|x86.Build.0 = Debug|Win32
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Release|x64.ActiveCfg = Release|x64
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Release|x64.Build.0 = Release|x64
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Release|x86.ActiveCfg = Release|Win32
+		{392FCDEB-8079-4213-AB88-D1996C713585}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

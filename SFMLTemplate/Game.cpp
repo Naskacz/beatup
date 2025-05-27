@@ -3,26 +3,45 @@
 #include <iostream>
 #include <filesystem>
 #include <vector>
-int Note::counter = 0;
+#include <cpr/cpr.h>
+#include <pqxx/pqxx>
+#include <crow.h>
 
+int Note::counter = 0;
+Game::~Game() {
+	delete menu;
+	delete settings;
+	if (topScorers) {
+		topScorers.reset();
+	}
+}
 Game::Game() :window(sf::VideoMode(800, 600), "BeatUp") {
 	if (!font.loadFromFile("arial.ttf")) {
 		std::cout << "Nie udalo sie zaladowac czcionki" << std::endl;
 		exit(1);
-	}
+	}	
 	menu = new Menu(font, window);
 	settings = new Settings(window, font);
 	nicknameText.setFont(font);
+	nicknameText.setCharacterSize(30);
 	nicknameText.setString(settings->getNickname());
 	nicknameText.setFillColor(sf::Color::White);
 	nicknameText.setOutlineColor(sf::Color::Black);
 	nicknameText.setOutlineThickness(2);
-	nicknameText.setPosition(700, 0);
+	sf::FloatRect bounds = nicknameText.getLocalBounds();
+	nicknameText.setPosition(790 - bounds.width, 10);
 	if (!backgroundTexture.loadFromFile("backgroundGame.png")) {
 		std::cerr << "Nie mozna zaladowac tekstury tla" << std::endl;
 	}
 	backgroundSprite.setScale((float)window.getSize().x / backgroundTexture.getSize().x, (float)window.getSize().y / backgroundTexture.getSize().y);
 	backgroundSprite.setTexture(backgroundTexture);
+
+	beatmapFileText.setFont(font);
+	beatmapFileText.setCharacterSize(30);
+	beatmapFileText.setPosition(200, 200);
+	beatmapFileText.setFillColor(sf::Color::White);
+
+	window.setKeyRepeatEnabled(true);
 }
 void Game::beatmapFileChoice() {
 	std::filesystem::path folder = std::filesystem::current_path();
@@ -88,7 +107,7 @@ void Game::processEvents() {
 			int choice = menu->getClickedIndex(mousePos);
 			if (choice == 0) {
 				state = GameState::Playing;
-				Note::counter = 0;
+				noteManager.clearNotes();
 				if (beatmapFile.empty())beatmapFileChoice();
 				noteManager.loadBeatmap(beatmapFile);
 				songFile = noteManager.getBeatmap().getSongFile();
@@ -101,6 +120,7 @@ void Game::processEvents() {
 				return;
 			}
 			else if (choice == 1) {
+				noteManager.clearNotes();
 				beatmapFileChoice();
 				std::cout << beatmapFile << std::endl;
 				state = GameState::Menu;
@@ -108,7 +128,7 @@ void Game::processEvents() {
 			}
 			else if (choice == 2) {
 				state = GameState::MapCreator;
-				Note::counter = 0;
+				noteManager.clearNotes();
 				songFileChoice();
 				std::cout << std::endl;
 				if (!music.openFromFile(songFile)) {
@@ -132,18 +152,40 @@ void Game::processEvents() {
 		{
 			int choice = settings->getClickedIndex(mousePos);
 			if (choice == 0) {
-				std::string str;
-				std::cin >> str;
-				settings->setNickname(str);
-				nicknameText.setString(settings->getNickname());
+				enteringNickname = true;
+				nicknameInput.clear();
 			}
 			else if (choice == 2) {
 				state = GameState::Menu;
 			}
 		}
+		if (state == GameState::Settings && enteringNickname) {
+			if (event.type == sf::Event::TextEntered) {
+				if (event.text.unicode == 8) { // Backspace
+					if (!nicknameInput.empty()) nicknameInput.pop_back();
+				}
+				else if (event.text.unicode >= 32 && event.text.unicode < 127) { // Printable characters
+					nicknameInput += static_cast<char>(event.text.unicode);
+					std::cout << nicknameInput << std::endl;
+				}
+				settings->setNickname(nicknameInput);
+				//nicknameText.setString(nicknameInput);
+			}
+			else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
+				if (!nicknameInput.empty()) {
+					settings->setNickname(nicknameInput);
+					nicknameText.setString(settings->getNickname());
+					sf::FloatRect bounds = nicknameText.getLocalBounds();
+					nicknameText.setPosition(790 - bounds.width, 10);
+					enteringNickname = false;
+					state = GameState::Menu;
+				}
+			}
+		}
+				
 		// ======================= GAME STATE PLAYING =========================
-		if (state == GameState::Playing && event.type == sf::Event::MouseButtonPressed) {
-			if (event.mouseButton.button == sf::Mouse::Left) {
+		if (state == GameState::Playing && (event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::KeyPressed)) {
+			if (event.mouseButton.button == sf::Mouse::Left || event.key.code == sf::Keyboard::Z || event.key.code == sf::Keyboard::X) {
 				noteManager.checkForClicks(mousePos, music.getPlayingOffset());
 			}
 		}
@@ -152,6 +194,7 @@ void Game::processEvents() {
 			if (event.key.code == sf::Keyboard::Escape) {
 				state = GameState::Menu;
 				music.stop();
+				enteringBeatmapFile = false;
 			}
 		}
 		// ======================= GAME STATE MAP CREATOR =========================
@@ -162,24 +205,71 @@ void Game::processEvents() {
 			}
 		}
 		// MAP CREATOR SAVE AND TO MENU
-		if (state == GameState::MapCreator && event.type == sf::Event::KeyPressed) {
-			if (event.key.code == sf::Keyboard::Enter) {
+		if (state == GameState::MapCreator) {
+			std::cout << beatmapFile << std::endl;
+			if (!enteringBeatmapFile && (
+				music.getStatus() == sf::SoundSource::Status::Stopped ||
+				(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter))) {
+				enteringBeatmapFile = true;
 				music.stop();
-				std::cout << "Zapisz mape jako: ";
-				std::cin >> beatmapFile;
-				std::cout << std::endl;
-				noteManager.saveBeatmap("beatmaps\\"+beatmapFile+".txt", songFile);
-				state = GameState::Menu;
+				beatmapFile.clear();
+				beatmapFileText.setString("Zapisz mape jako: ");
 			}
+			if (event.type == sf::Event::TextEntered && enteringBeatmapFile) {
+				std::cout << "TextEntered: " << event.text.unicode << std::endl;
+				if (event.text.unicode == 8) {
+					if (!beatmapFile.empty()) beatmapFile.pop_back();
+				}
+				else if (event.text.unicode >= 32 && event.text.unicode < 127) {
+					beatmapFile += static_cast<char>(event.text.unicode);
+				}
+				beatmapFileText.setString("Zapisz mape jako: " + beatmapFile);
+				continue; 
+			}
+			else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
+				// TUTAJ by³ problem — upewniamy siê, ¿e Enter dzia³a
+				if (!beatmapFile.empty()) {
+					noteManager.saveBeatmap("beatmaps\\" + beatmapFile + ".txt", songFile);
+					enteringBeatmapFile = false;
+					state = GameState::Menu;
+				}
+			}
+				
+		}
+		// ========================= GAME STATE SCOREBOARD =========================
+		if (event.type == sf::Event::KeyPressed && state==GameState::Scoreboard) {
+			state = GameState::Menu;
 		}
 	}
 }
 void Game::update(sf::Time) {
 	if (state == GameState::Playing) {
 		noteManager.update(music.getPlayingOffset());
+		if (music.getStatus() == sf::SoundSource::Status::Stopped) {
+			std::string filenameSongFile = std::filesystem::path(songFile).filename().string();
+			Score s{
+				settings->getNickname(),
+				noteManager.getScore(),
+				filenameSongFile
+			};
+			std::string resp;
+			/*std::cout << "{\"nickname\":\"" << s.nickname << "\",\"score\":" << s.score << ",\"song\":\"" << s.song << "\"}" << std::endl;*/
+			if (httpClient.sendScore(s, resp)) {
+				std::cout << "Score sent: " << resp << "\n";
+			}
+			else {
+				std::cerr << "Failed to send score: " << resp << "\n";
+			}
+			music.stop();
+			std::vector<Score> topScores;
+			std::string songName = s.song;
+			httpClient.fetchScores(songName, topScores);
+			topScorers = std::make_unique<TopScorers>(font, window, topScores);
+			state = GameState::Scoreboard;
+		}
 	}
 	if (state == GameState::MapCreator) {
-
+		noteManager.update(music.getPlayingOffset());
 	}
 	if (state == GameState::Menu) {
 	
@@ -192,6 +282,11 @@ void Game::update(sf::Time) {
 void Game::render() {
 	window.clear();
 
+	if (state==GameState::Scoreboard) {
+		window.draw(backgroundSprite);
+		topScorers->draw(window);
+	}
+
 	if (state == GameState::Menu) menu->drawMenu();
 	else if (state == GameState::Playing) {
 		window.clear();
@@ -199,11 +294,17 @@ void Game::render() {
 		noteManager.render(window, music.getPlayingOffset().asSeconds());
 	}
 	else if (state == GameState::MapCreator) {
+		window.draw(backgroundSprite);
 		noteManager.render(window, music.getPlayingOffset().asSeconds());
-
+		if (enteringBeatmapFile) {
+			window.draw(beatmapFileText);
+		}
 	}
 	else if (state == GameState::Settings) {
 		settings->drawSettings();
+		if (enteringNickname) {
+			settings->drawInput();
+		}
 	}
 	window.draw(nicknameText);
 	window.display();

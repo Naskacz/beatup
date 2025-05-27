@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "SFMLTemplate\\SFMLTemplate.vcxproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "BeatUpServer\\BeatUpServer.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

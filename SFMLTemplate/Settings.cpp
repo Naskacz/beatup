@@ -26,10 +26,25 @@ Settings::Settings(sf::RenderWindow& window, sf::Font& font):window(window) {
 	}
 	backgroundSprite.setScale((float)window.getSize().x / backgroundTexture.getSize().x, (float)window.getSize().y / backgroundTexture.getSize().y);
 	backgroundSprite.setTexture(backgroundTexture);
+
+	nicknameInputBox.setSize(sf::Vector2f(200, 40));
+	nicknameInputBox.setFillColor(sf::Color::White);
+	nicknameInputBox.setOutlineColor(sf::Color::Black);
+	nicknameInputBox.setOutlineThickness(2);
+	nicknameInputBox.setPosition(50, 205);
+
+	nicknameText.setFont(font);
+	nicknameText.setCharacterSize(30);
+	nicknameText.setString(nicknameInput);
+	nicknameText.setFillColor(sf::Color::White);
+	sf::FloatRect bounds = nicknameText.getLocalBounds();
+	nicknameText.setOrigin(bounds.left, bounds.top);
+	nicknameText.setPosition(nicknameInputBox.getPosition().x + 5.f, nicknameInputBox.getPosition().y + (nicknameInputBox.getSize().y - bounds.height) / 2.f - 5.f);
 }
 
 void Settings::setNickname(const std::string str) {
 	nicknameInput = str;
+	nicknameText.setString(nicknameInput);
 }
 std::string& Settings::getNickname() {
 	return nicknameInput;
@@ -39,6 +54,10 @@ void Settings::drawSettings() {
 	window.draw(backgroundSprite);
 	window.draw(*title);
 	for (const auto& option : options) window.draw(option);
+}
+void Settings::drawInput() {
+	window.draw(nicknameInputBox);
+	window.draw(nicknameText);
 }
 int Settings::getClickedIndex(sf::Vector2f mousePos) {
 	for (int i = 0; i < 3; i++) {
